@@ -22,7 +22,7 @@ export const getPersonaById = async (req, res) => {
                 id:req.params.id
             }
         });
-        res.json(personaId);
+        res.json(personaId[0]);
     } catch (error) {
         res.json({message: error.message})
     }
@@ -35,7 +35,7 @@ export const createPersona = async (req, res) => {
         //No lo asigno a una constante dado que me mostrará un mensaje de éxtio al crear la persona        
          await PersonaModel.create(req.body)
          res.json({
-            "message": "Persona registrada !"
+            "message": "Persona registrada correctamente!"
          });   
     } catch (error) {
         res.json({message: error.message})
@@ -51,7 +51,7 @@ export const updatePersona = async (req, res) => {
             where: {id: req.params.id}
         })
          res.json({
-            "message": "Persona modificada !"
+            "message": "Persona modificada correctamente!"
          }); 
     } catch (error) {
         res.json({message: error.message})
@@ -66,6 +66,9 @@ export const deletePersona = async (req, res) =>{
         await PersonaModel.destroy({
             where: {id: req.params.id}
         });
+        res.json({
+            "message":"Se eliminó correctamente !"
+        })
     } catch (error) {
         res.json({message: error.message})
     }
