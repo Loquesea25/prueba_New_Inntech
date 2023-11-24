@@ -1,6 +1,9 @@
 import express  from "express";
 import { createPersona, deletePersona, getAllPersonas, getPersonaById, updatePersona } from "../controller/PersonaController.js";
-import { register } from "../controller/LoguinController.js";
+import loginController from "../controller/LoguinController.js"
+
+//Importación del controlador para registrar
+//import { register } from "../controller/LoguinController.js";
 
 //Rutas con los verbos HTTP
 
@@ -31,8 +34,13 @@ express('../database/db')
 
 
 
-//router.get('/ping', ping)
 
-router.post('/register')
+
+
+
+
+// Ruta para el login
+router.post('/login', loginController);
+
 
 export default router
