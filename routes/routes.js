@@ -34,11 +34,6 @@ express('../database/db')
 
 
 
-
-
-
-
-
 // Ruta para el login
 router.post('/login', loginController);
 

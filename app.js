@@ -1,9 +1,7 @@
 import  express  from "express";
 import cors from 'cors';
-import dotenv from 'dotenv';
+
 import cookieParser from "cookie-parser";
-
-
 
 //Importo la DB
 import db from "./database/db.js";
@@ -44,14 +42,13 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 
 
-//Para enviar variables de entorno 
-dotenv.config({path: './env/.env'})
+
 
 //Para enviar cookies
 app.use(cookieParser)
 
 
-//Cambio el puerto para que react corra en el 3000
+//Cambio el puerto para que el servidor corra en el puerto 8000 y react en el 3000
 app.listen(8000, () => {
     console.log('Servidor corriendo en http://localhost:8000/');
 })

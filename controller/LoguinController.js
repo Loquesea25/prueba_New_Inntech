@@ -15,6 +15,8 @@ import { promisify } from 'util';
 //     }
 // }
 
+
+//Prueba simulando usuario de una db
 const users = [
     {
     //   id: 1,
